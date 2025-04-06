@@ -12,21 +12,19 @@ def guess_file_language(file):
             language = "json"
         case ".yaml"|".yml":
             language = "yaml"
-        case ".toml":
-            language = "toml"
         case _:
             language = "inconnu"
     return language
 
 def read_file_by_language(file, language):
+    """Lit le fichier en fonction de son langage"""
+    
     with open(file, "r") as input_file:
         match language:
             case "json":
                 data = json.load(input_file)
             case "yaml":
                 data = yaml.safe_load(input_file)
-            case "toml":
-                data = toml.load(input_file)
     return data
 
 def main():
