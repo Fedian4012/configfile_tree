@@ -1,9 +1,0 @@
-produit = "Ordinateur"
-marque = "XYZ"
-prix = 1200.99
-disponibilité = true
-
-[caractéristiques]
-processeur = "Intel i7"
-ram = "16GB"
-stockage = "512GB SSD"

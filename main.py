@@ -2,7 +2,6 @@ import json
 import os
 import sys
 import yaml
-import toml
 
 def guess_file_language(file):
     """Devine le langage du fichier à partir de son extension"""
@@ -31,7 +30,7 @@ def read_file_by_language(file, language):
     return data
 
 def main():
-    file = "data.yml"
+    file = "data.toml"
     language_of_file = guess_file_language(file)     
     print(read_file_by_language(file, language_of_file))
 
