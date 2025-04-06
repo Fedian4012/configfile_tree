@@ -27,10 +27,36 @@ def read_file_by_language(file, language):
                 data = yaml.safe_load(input_file)
     return data
 
+def print_tree(data, prefix=""):
+    """Affiche l'arborescence du dictionnaire"""
+    if isinstance(data, dict):
+        keys = list(data.keys())
+        for index, key in enumerate(keys):
+            is_last = index == len(keys) - 1
+            connector = "└── " if is_last else "├── "
+            print(prefix + connector + str(key) + ":")
+            next_prefix = prefix + ("    " if is_last else "│   ")
+            print_tree(data[key], prefix=next_prefix)
+
+    elif isinstance(data, list):
+        for index, item in enumerate(data):
+            is_last = index == len(data) - 1
+            connector = "└── " if is_last else "├── "
+            print(prefix + connector + f"[{index}]")
+            next_prefix = prefix + ("    " if is_last else "│   ")
+            print_tree(item, prefix=next_prefix)
+
+    else:
+        print(prefix + str(data))
+
 def main():
-    file = "data.toml"
-    language_of_file = guess_file_language(file)     
-    print(read_file_by_language(file, language_of_file))
+    file = sys.argv[1]
+    language_of_file = guess_file_language(file)
+    
+    if language_of_file == "inconnu":
+        raise SystemExit("Langage non supporté")     
+    data = read_file_by_language(file, language_of_file)
+    print_tree(data)
 
 if __name__ == "__main__":
     main()
