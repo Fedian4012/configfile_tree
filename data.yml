@@ -1,8 +1,0 @@
-produit: Ordinateur
-marque: XYZ
-caractéristiques:
-  processeur: Intel i7
-  ram: 16GB
-  stockage: 512GB SSD
-disponibilité: true
-prix: 1200.99
