@@ -1,0 +1,15 @@
+Package: configfile-tree
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3, python3-yaml
+Maintainer: Fedian4012 <francois.fedian.4012@free.fr>
+Description: Affiche l'arborescence des fichiers de configuration JSON et YAML
+ Un outil simple et léger pour visualiser l'arborescence des fichiers
+ de configuration au format JSON et YAML directement dans votre terminal.
+ .
+ Idéal pour analyser rapidement la structure de fichiers de configuration,
+ sans avoir à ouvrir d'éditeur complexe.
+ .
+ Projet hébergé sur : https://github.com/Fedian4012/configfile_tree
